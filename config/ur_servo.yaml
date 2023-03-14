@@ -1,7 +1,7 @@
 ###############################################
 # Modify all parameters related to servoing here
 ###############################################
-use_gazebo: false # Whether the robot is started in a Gazebo simulation environment
+use_gazebo: true # Whether the robot is started in a Gazebo simulation environment
 
 ## Properties of incoming commands
 command_in_type: "speed_units" # "unitless"> in the range [-1:1], as if from joystick. "speed_units"> cmds are in m/s and rad/s
@@ -36,12 +36,12 @@ smoothing_filter_plugin_name: "online_signal_smoothing::ButterworthFilterPlugin"
 low_pass_filter_coeff: 10.0  # Larger --> trust the filtered data more, trust the measurements less.
 
 ## MoveIt properties
-move_group_name:  ur_manipulator  # Often 'manipulator' or 'arm'
+move_group_name:  ur_manipulator_gripper  # Often 'manipulator' or 'arm'
 planning_frame: base_link  # The MoveIt planning frame. Often 'base_link' or 'world'
 
 ## Other frames
-ee_frame_name: tool0  # The name of the end effector link, used to return the EE pose
-robot_link_command_frame:  tool0  # commands must be given in the frame of a robot link. Usually either the base or end effector
+ee_frame_name: robotiq_grasp_point  # The name of the end effector link, used to return the EE pose
+robot_link_command_frame:  robotiq_grasp_point  # commands must be given in the frame of a robot link. Usually either the base or end effector
 
 ## Stopping behaviour
 incoming_command_timeout:  0.1  # Stop servoing if X seconds elapse without a new command
