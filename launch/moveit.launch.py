@@ -177,7 +177,7 @@ def generate_launch_description():
             use_sim_time,
         ]
     )
-    
+    # TODO add event functions inside the node
     moveit_planning_scene_init = Node(
         package="rbs_skill_servers",
         executable="moveit_update_planning_scene_service_server",
@@ -193,6 +193,6 @@ def generate_launch_description():
         gripper_control_node,
         move_cartesian_path_action_server,
         move_joint_state_action_server,
-        moveit_planning_scene_init
+        # moveit_planning_scene_init
     ]
     return LaunchDescription(declared_arguments + nodes_to_start)

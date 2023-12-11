@@ -9,6 +9,6 @@
 
   <xacro:include filename="$(find ur_moveit_config)/srdf/ur_macro.srdf.xacro"/>
 
-  <xacro:ur_srdf name="$(arg name)" prefix="$(arg prefix)" with_gripper="$(arg with_gripper)"/>
+  <xacro:ur_srdf name="$(arg name)" prefix="$(arg prefix)" with_gripper="$(arg with_gripper)" gripper_name="schunk"/>
 
 </robot>
